@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/app_background"
+    tools:context=".PhotoCrypt">
+
+    <ImageView
+        android:id="@+id/photo_IMG_back"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
+        android:elevation="5dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/photo_BTN_encrypt"
+        app:layout_constraintStart_toStartOf="parent"
+        android:src="@drawable/ic_back">
+
+    </ImageView>
+
+
+
+    <Button
+        android:id="@+id/photo_BTN_encrypt"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="70dp"
+        android:backgroundTint="#E6FF8989"
+        android:text="Encrypt"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textColorHighlight="@color/black"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+    </Button>
+
+    <Button
+        android:id="@+id/photo_BTN_decrypt"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="#E699627A"
+        android:text="Decrypt"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textColorHighlight="@color/black"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/photo_BTN_encrypt">
+    </Button>
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/photo_BTN_copy"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/photo_BTN_decrypt">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/photo_EDT_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:background="#B3FFFFFF"
+                android:padding="10dp"
+                android:hint="Enter Text"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"></EditText>
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/photo_BTN_copy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginBottom="8dp"
+        android:backgroundTint="#E6C88EA7"
+        android:text="Copy"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toTopOf="@id/photo_IMG_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </Button>
+
+    <ImageView
+        android:id="@+id/photo_IMG_image"
+        android:layout_width="200dp"
+        android:layout_height="250dp"
+        android:layout_marginBottom="20dp"
+        android:elevation="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:src="@drawable/image">
+    </ImageView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

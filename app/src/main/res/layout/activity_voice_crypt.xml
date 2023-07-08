@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/app_background"
+    tools:context=".VoiceCrypt">
+
+    <ImageView
+        android:id="@+id/voice_IMG_back"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
+        android:elevation="5dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/voice_BTN_choose"
+        app:layout_constraintStart_toStartOf="parent"
+        android:src="@drawable/ic_back">
+
+    </ImageView>
+
+    <Button
+        android:id="@+id/voice_BTN_choose"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="70dp"
+        android:backgroundTint="#E6FF8989"
+        android:text="Choose Audio"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textColorHighlight="@color/black"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+    </Button>
+
+    <LinearLayout
+        android:id="@+id/voice_LinLay_player"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        app:layout_constraintTop_toBottomOf="@id/voice_BTN_choose"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/voice_BTN_encrypt"
+        >
+
+        <ImageView
+            android:id="@+id/voice_IMG_stop"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:elevation="5dp"
+            android:src="@drawable/ic_stop">
+
+        </ImageView>
+
+        <ImageView
+            android:id="@+id/voice_IMG_play"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:elevation="5dp"
+            android:src="@drawable/ic_play">
+
+        </ImageView>
+
+
+        <!-- <Button
+             android:id="@+id/voice_BTN_stop"
+             android:layout_width="match_parent"
+             android:layout_height="60dp"
+             android:layout_marginHorizontal="30dp"
+             android:layout_marginTop="30dp"
+             android:backgroundTint="#E699627A"
+             android:text="Stop Audio"
+             android:textStyle="bold"
+             android:textColor="@color/white"
+             android:textSize="20sp"
+             android:textColorHighlight="@color/black"
+             android:textAllCaps="false">
+         </Button>-->
+
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/voice_BTN_encrypt"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="#E6FCC8D1"
+        android:text="Encrypt Audio"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textColorHighlight="@color/black"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/voice_LinLay_player">
+    </Button>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

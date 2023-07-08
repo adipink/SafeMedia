@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/app_background"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/main_TXT_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Safe Media"
+        android:textColor="#FF7777"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:elevation="3dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <RelativeLayout
+        android:id="@+id/main_REL_photo"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/rounded_shape"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/main_TXT_title"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            app:tint="#000000"
+            android:src="@drawable/ic_camera">
+        </ImageView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="65dp"
+            android:text="Photo Encryption Decryption"
+            android:textColor="@color/black"
+            android:textSize="20sp">
+        </TextView>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/main_REL_voice"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/rounded_shape"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/main_REL_photo"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            app:tint="#000000"
+            android:src="@drawable/ic_voice">
+        </ImageView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="65dp"
+            android:text="Voice Encryption Decryption"
+            android:textColor="@color/black"
+            android:textSize="20sp">
+        </TextView>
+
+    </RelativeLayout>
+
+
+    
+    <!--<LinearLayout
+        android:id="@+id/main_LinLay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp"
+        android:paddingTop="30dp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/main_REL_voice">
+
+    </LinearLayout>-->
+
+    <ImageView
+        android:id="@+id/main_IMG_logo"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="60dp"
+        android:elevation="5dp"
+        android:src="@drawable/ic_logo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/main_REL_voice">
+
+    </ImageView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

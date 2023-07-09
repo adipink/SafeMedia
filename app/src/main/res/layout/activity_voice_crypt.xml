@@ -38,59 +38,80 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
     </Button>
-
     <LinearLayout
-        android:id="@+id/voice_LinLay_player"
+        android:id="@+id/voice_LinLay_regular"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="2"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:background="@drawable/rounded_shape"
+        android:backgroundTint="#E6FFFFFF"
         app:layout_constraintTop_toBottomOf="@id/voice_BTN_choose"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/voice_BTN_encrypt"
         >
 
-        <ImageView
-            android:id="@+id/voice_IMG_stop"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="10dp"
-            android:layout_weight="1"
-            android:elevation="5dp"
-            android:src="@drawable/ic_stop">
+        <TextView
+            android:id="@+id/voice_TXT_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Title"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:padding="10dp"
+            android:textStyle="bold">
+        </TextView>
+        <SeekBar
+            android:id="@+id/voice_SEEK_progress_audio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="100"
+            android:padding="10dp"/>
+        <TextView
+            android:id="@+id/voice_TXT_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:padding="10dp"
+            android:text="00:00 / 00:00"/>
 
-        </ImageView>
+        <LinearLayout
+            android:id="@+id/voice_LinLay_player"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            >
 
-        <ImageView
-            android:id="@+id/voice_IMG_play"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="10dp"
-            android:layout_weight="1"
-            android:elevation="5dp"
-            android:src="@drawable/ic_play">
+            <ImageView
+                android:id="@+id/voice_IMG_stop"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:elevation="5dp"
+                android:src="@drawable/ic_stop">
 
-        </ImageView>
+            </ImageView>
 
+            <ImageView
+                android:id="@+id/voice_IMG_play"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:elevation="5dp"
+                android:src="@drawable/ic_play">
 
-        <!-- <Button
-             android:id="@+id/voice_BTN_stop"
-             android:layout_width="match_parent"
-             android:layout_height="60dp"
-             android:layout_marginHorizontal="30dp"
-             android:layout_marginTop="30dp"
-             android:backgroundTint="#E699627A"
-             android:text="Stop Audio"
-             android:textStyle="bold"
-             android:textColor="@color/white"
-             android:textSize="20sp"
-             android:textColorHighlight="@color/black"
-             android:textAllCaps="false">
-         </Button>-->
+            </ImageView>
+
+        </LinearLayout>
 
 
     </LinearLayout>
+
 
 
     <Button
@@ -108,7 +129,75 @@
         android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/voice_LinLay_player">
+        app:layout_constraintTop_toBottomOf="@id/voice_LinLay_regular">
     </Button>
+
+   <!-- <TextView
+        android:id="@+id/voice_TXT_encrypt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Play encrypted Audio"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:padding="10dp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/voice_BTN_encrypt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+    </TextView>
+
+    <LinearLayout
+        android:id="@+id/voice_LinLay_enc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        app:layout_constraintTop_toBottomOf="@id/voice_TXT_encrypt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        >
+
+        <ImageView
+            android:id="@+id/voice_IMG_stop_enc"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:elevation="5dp"
+            android:src="@drawable/ic_stop">
+
+        </ImageView>
+
+        <ImageView
+            android:id="@+id/voice_IMG_play_enc"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:elevation="5dp"
+            android:src="@drawable/ic_play">
+
+        </ImageView>
+
+    </LinearLayout>
+-->
+    <Button
+        android:id="@+id/voice_BTN_decrypt"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="#E6D989B5"
+        android:text="Decrypt Audio"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textColorHighlight="@color/black"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/voice_BTN_encrypt">
+    </Button>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

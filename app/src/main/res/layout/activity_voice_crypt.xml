@@ -44,6 +44,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="30dp"
         android:gravity="center"
         android:background="@drawable/rounded_shape"
         android:backgroundTint="#E6FFFFFF"

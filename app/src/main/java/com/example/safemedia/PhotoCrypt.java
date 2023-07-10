@@ -131,9 +131,6 @@ public class PhotoCrypt extends AppCompatActivity {
     }
 
     private void selectPhoto() {
-        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-        intent.addCategory(Intent.CATEGORY_OPENABLE);
-        intent.setType("image/*");
         photoPickerLauncher.launch("image/*");
     }
 

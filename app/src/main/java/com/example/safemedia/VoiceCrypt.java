@@ -54,7 +54,6 @@ import javax.crypto.spec.SecretKeySpec;
 public class VoiceCrypt extends AppCompatActivity {
 
     private final int REQUEST_WRITE_PERMISSION = 1;
-    private static final int FILE_PICKER_REQUEST_CODE = 2;
     private static final String TAG = "AudioEncryptionHelper";
     private String passw = "MyAdiPiPassword";
     private ActivityResultLauncher<String> audioFilePickerLauncher;
@@ -66,10 +65,8 @@ public class VoiceCrypt extends AppCompatActivity {
     private SeekBar voice_SEEK_progress_audio;
     private MediaPlayer player;
     private ScheduledExecutorService timer;
-    private File file;
     private TextToSpeech textToSpeech;
     private String nameAudio;
-    private String encrypt ;
     private String encryptedFilePath;
     private String duration;
 
@@ -80,7 +77,6 @@ public class VoiceCrypt extends AppCompatActivity {
         setContentView(R.layout.activity_voice_crypt);
         findViews();
         player = new MediaPlayer();
-        encrypt = null;
         encryptedFilePath = null;
         requestPermission();
         createListeners();
@@ -132,7 +128,6 @@ public class VoiceCrypt extends AppCompatActivity {
                    }
                 }else{
                     if(selectedAudioUri != null){
-                       // Toast.makeText(VoiceCrypt.this, "this = "+ selectedAudioUri, Toast.LENGTH_SHORT).show();
                         createMediaPlayer();
                     }
                 }
@@ -261,10 +256,7 @@ public class VoiceCrypt extends AppCompatActivity {
             outputStream.close();
 
             Log.d(TAG, "Audio encryption completed. Encrypted file saved to: " + encryptedFilePath);
-
-
-
-
+            voice_BTN_decrypt.setEnabled(true);
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -360,7 +352,7 @@ public class VoiceCrypt extends AppCompatActivity {
             voice_IMG_play.setEnabled(true);
             voice_IMG_stop.setEnabled(true);
             voice_BTN_encrypt.setEnabled(true);
-            voice_BTN_decrypt.setEnabled(true);
+            voice_BTN_decrypt.setEnabled(false);
 
 
             int milis = player.getDuration();
@@ -404,7 +396,6 @@ public class VoiceCrypt extends AppCompatActivity {
         }
 
         nameAudio = fileName;
-       // Toast.makeText(this, "file name = " + nameAudio, Toast.LENGTH_SHORT).show();
 
     }
 
@@ -431,9 +422,6 @@ public class VoiceCrypt extends AppCompatActivity {
     }
 
     private void pickSound() {
-        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-        intent.addCategory(Intent.CATEGORY_OPENABLE);
-        intent.setType("audio/*");
         audioFilePickerLauncher.launch("audio/*");
     }
 
